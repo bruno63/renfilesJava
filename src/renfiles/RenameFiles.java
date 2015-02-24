@@ -225,7 +225,7 @@ public class RenameFiles {
 		String _destDirName = null; // base destination directory
 		String _dateStr = null;
 		// TODO: externalize newsDirName into config
-		String _newsDirName = destDirName + "/imac/news";
+		String _newsDirName = destDirName + "/news";
 
 		// handle each file type
 		// TODO: externalize this into the configuration and make it generic
@@ -300,39 +300,31 @@ public class RenameFiles {
 				_tags = "dNews,tTech";
 			}
 			else if (f.getName().substring(8).startsWith("rg") && _dateStr.length()>=6) {		// Rechnung / Bill
-				_destDirName = destDirName + "/done/finance";
+				_destDirName = destDirName + "/finance/rgs";
 				_tags = "tFinance,dBill";
 			}
 			else if (f.getName().substring(8).startsWith("zkb") && _dateStr.length()>=6) {		// ZKB
-				_destDirName = destDirName + "/done/finance";
+				_destDirName = destDirName + "/finance/bank";
 				_tags = "tFinance,dBill,oZkb";
 			}
 			else if (f.getName().substring(8).startsWith("pf") && _dateStr.length()>=6) {		// PostFinance
-				_destDirName = destDirName + "/done/finance";				
+				_destDirName = destDirName + "/finance/bank";				
 				_tags = "tFinance,dBill,oPost";
 			}
 			else if (f.getName().substring(8).startsWith("lohn") && _dateStr.length()>=6) {		// Lohn / Salary
-				_destDirName = destDirName + "/done/finance";
+				_destDirName = destDirName + "/finance";
 				_tags = "tFinance,dStatement";
 			}
 			else if (f.getName().substring(8).startsWith("slkk") && _dateStr.length()>=6) {		// SLKK
-				_destDirName = destDirName + "/done/finance";
+				_destDirName = destDirName + "/finance/versicherungen";
 				_tags = "tFinance,tInsurance,oSlkk";
 			}
-			else if (f.getName().substring(8).startsWith("mmb") && _dateStr.length()>=6) {		// meeting minutes
-				_destDirName = destDirName + "/done/adnovum";
-				_tags = "dMinutes,oAdnovum";
-			}
-			else if (f.getName().substring(8).startsWith("karte") && _dateStr.length()>=6) {	// Postcard 
-				_destDirName = destDirName + "/done/corr";
-				_tags = "dCorr,DPcard";
-			}
 			else if (f.getName().substring(8).startsWith("diary") && _dateStr.length()>=6) {	// diary
-				_destDirName = "/Users/bruno/Documents/archive/diary/201x/2014/08";
+				_destDirName = destDirName + "/diary";
 				_tags = "oBruno,dDiary";
 			}
 			else if (f.getName().substring(8).startsWith("abstract_") && _dateStr.length()>=4) {	// abstracts
-				_destDirName = destDirName + "/imac/abstract/" + _dateStr.substring(0,4);	
+				_destDirName = _newsDirName + "/abstract";	
 				_tags = "dAbstract";
 			}
 			else if (f.getName().substring(8).startsWith("kof") && _dateStr.length()>=6) {	// KOF reports
@@ -340,15 +332,15 @@ public class RenameFiles {
 				_tags = "dReport,tEco";
 			}
 			else if (f.getName().substring(8).startsWith("book") && _dateStr.length()>=6) {	// ebook
-				_destDirName = destDirName + "/toSandisk/books";	
+				_destDirName = destDirName + "/books";	
 				_tags = "dBook";
 			}
 			else if (f.getName().substring(8).startsWith("sise") && _dateStr.length()>=6) {		// SI-SE
-				_destDirName = destDirName + "/done/orgunits/sise";
+				_destDirName = destDirName + "/orgunits/sise";
 				_tags = "oSise";
 			}
 			else if (f.getName().substring(8).startsWith("awuz") && _dateStr.length()>=6) {		// AWUZ
-				_destDirName = destDirName + "/done/orgunits/awuz";	
+				_destDirName = destDirName + "/orgunits/awuz";	
 				_tags = "oAwuzUzha";
 			}
 			else if (f.getName().substring(8).startsWith("informatikSpektrum") && _dateStr.length()>=6) {		// Informatik Spektruml
@@ -360,23 +352,23 @@ public class RenameFiles {
 				_tags = "dPres";
 			}
 			else if (f.getName().substring(8).startsWith("itc") && _dateStr.length()>=6) {		// IT consulting contract
-				_destDirName = destDirName + "/done/business";
+				_destDirName = destDirName + "/business";
 				_tags = "dContract,dItc";
 			}
 			else if (f.getName().substring(8).startsWith("swd") && _dateStr.length()>=6) {		// SW development contract
-				_destDirName = destDirName + "/done/business";
+				_destDirName = destDirName + "/business";
 				_tags = "dContract,dSwd";
 			}
 			else if (f.getName().substring(8).startsWith("sla") && _dateStr.length()>=6) {		// maintenance contract
-				_destDirName = destDirName + "/done/business";
+				_destDirName = destDirName + "/business";
 				_tags = "dContract,dSla";
 			}
 			else if (f.getName().substring(8).startsWith("nda") && _dateStr.length()>=6) {		// non disclosure agreement
-				_destDirName = destDirName + "/done/business";
+				_destDirName = destDirName + "/business";
 				_tags = "dContract,dNda";
 			}
 			else if (f.getName().substring(8).startsWith("offer") && _dateStr.length()>=6) {		// proposal
-				_destDirName = destDirName + "/done/business";
+				_destDirName = destDirName + "/business";
 				_tags = "dContract,dOffer";
 			}
 
